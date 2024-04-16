@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="io" class="learn.dontwreckmyhouse.ui.ConsoleIO"></bean>
+    <bean id="view" class="learn.dontwreckmyhouse.ui.View">
+        <constructor-arg ref="io"/>
+    </bean>
+
+    <bean id="guest_repository" class="learn.dontwreckmyhouse.data.GuestFileRepository">
+        <constructor-arg value="./data/guests.csv"/>
+    </bean>
+    <bean id="host_repository" class="learn.dontwreckmyhouse.data.HostFileRepository">
+        <constructor-arg value="./data/hosts.csv"/>
+    </bean>
+    <bean id="reservation_repository" class="learn.dontwreckmyhouse.data.ReservationFileRepository">
+        <constructor-arg value="./data/reservations"/>
+    </bean>
+
+    <bean id="guest_service" class="learn.dontwreckmyhouse.domain.GuestService">
+        <constructor-arg ref="guest_repository"/>
+    </bean>
+    <bean id="host_service" class="learn.dontwreckmyhouse.domain.HostService">
+        <constructor-arg ref="host_repository"/>
+    </bean>
+    <bean id="reservation_service" class="learn.dontwreckmyhouse.domain.ReservationService">
+        <constructor-arg ref="reservation_repository"/>
+    </bean>
+
+    <bean class="learn.dontwreckmyhouse.ui.Controller">
+        <constructor-arg ref="guest_service"/>
+        <constructor-arg ref="host_service"/>
+        <constructor-arg ref="reservation_service"/>
+        <constructor-arg ref="view"/>
+    </bean>
+
+</beans>
