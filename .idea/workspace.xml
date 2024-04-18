@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50a14076-231c-4733-9316-3fe45f485e8a" name="Changes" comment="" />
+    <list default="true" id="50a14076-231c-4733-9316-3fe45f485e8a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/reservations/3edda6bc-ab95-49a8-8962-d50b53f84b15.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/reservations/3edda6bc-ab95-49a8-8962-d50b53f84b15.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/dontwreckmyhouse/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/dontwreckmyhouse/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/dontwreckmyhouse/data/ReservationFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/dontwreckmyhouse/data/ReservationFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/dontwreckmyhouse/data/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/dontwreckmyhouse/data/ReservationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/dontwreckmyhouse/domain/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/dontwreckmyhouse/domain/ReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/dontwreckmyhouse/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/dontwreckmyhouse/ui/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dependency-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/learn/dontwreckmyhouse/data/ReservationFileRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/dontwreckmyhouse/data/ReservationFileRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/learn/dontwreckmyhouse/data/ReservationRepositoryDouble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/dontwreckmyhouse/data/ReservationRepositoryDouble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/learn/dontwreckmyhouse/domain/ReservationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/dontwreckmyhouse/domain/ReservationServiceTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,79 +49,79 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.App.executor": "Run",
-    "JUnit.GuestFileRepositoryTest.executor": "Run",
-    "JUnit.GuestFileRepositoryTest.shouldFindAllShouldReturnCorrectNumberOfGuests.executor": "Run",
-    "JUnit.GuestFileRepositoryTest.shouldFindByEmail.executor": "Run",
-    "JUnit.GuestFileRepositoryTest.shouldFindById.executor": "Run",
-    "JUnit.GuestFileRepositoryTest.shouldNotFindNonExistingEmail.executor": "Run",
-    "JUnit.GuestFileRepositoryTest.shouldNotFindNonExistingId.executor": "Run",
-    "JUnit.GuestServiceTest.executor": "Run",
-    "JUnit.GuestServiceTest.shouldFindAllGuests.executor": "Run",
-    "JUnit.GuestServiceTest.shouldFindById.executor": "Run",
-    "JUnit.GuestServiceTest.shouldNotFindNonExistentEmail.executor": "Run",
-    "JUnit.GuestServiceTest.shouldNotFindNonExistingId.executor": "Run",
-    "JUnit.HostFileRepositoryTest.shouldFindAll.executor": "Run",
-    "JUnit.HostFileRepositoryTest.shouldFindByEmail.executor": "Run",
-    "JUnit.HostFileRepositoryTest.shouldNotFindNonExistingEmail.executor": "Run",
-    "JUnit.HostServiceTest.executor": "Run",
-    "JUnit.HostServiceTest.shouldFindAllHosts.executor": "Run",
-    "JUnit.HostServiceTest.shouldFindByEmail.executor": "Run",
-    "JUnit.HostServiceTest.shouldFindById.executor": "Run",
-    "JUnit.HostServiceTest.shouldNotFindNonExistingEmail.executor": "Run",
-    "JUnit.HostServiceTest.shouldNotFindNonExistingId.executor": "Run",
-    "JUnit.ReservationFileRepositoryTest.executor": "Run",
-    "JUnit.ReservationFileRepositoryTest.findAllReservationPathsShouldReturnCorrectNumberOfFiles.executor": "Run",
-    "JUnit.ReservationFileRepositoryTest.findReservation.executor": "Run",
-    "JUnit.ReservationFileRepositoryTest.findReservationsByHostId.executor": "Run",
-    "JUnit.ReservationFileRepositoryTest.shouldAddReservation.executor": "Run",
-    "JUnit.ReservationFileRepositoryTest.shouldDeleteReservation.executor": "Run",
-    "JUnit.ReservationFileRepositoryTest.shouldNotDeleteNonExistingReservation.executor": "Run",
-    "JUnit.ReservationFileRepositoryTest.shouldNotFindNonExistentHostIdReservation.executor": "Run",
-    "JUnit.ReservationFileRepositoryTest.shouldNotFindNonExistentHostIdReservations.executor": "Run",
-    "JUnit.ReservationFileRepositoryTest.shouldNotFindNonExistentReservation.executor": "Run",
-    "JUnit.ReservationFileRepositoryTest.shouldNotUpdateNonExistingReservation.executor": "Run",
-    "JUnit.ReservationFileRepositoryTest.shouldUpdateReservation.executor": "Run",
-    "JUnit.ReservationServiceTest.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldAddAReservationStartDateOnAnotherEndDate.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldAddReservation.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldCalculateTotalRateCorrectly.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldCalculateWeekDaysCorrectly.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldCalculateWeekendRateCorrectly.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldDeleteReservation.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldFindByEmailReturnsCorrectNumberOfReservations.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldFindReservationByHostId.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldFindReservationsByHostId.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldFindSingleReservation.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotAddNullGuest.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotAddOverlappingReservation.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotAddReservationWithNoHost.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotAddReservationWithNullEndDate.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotAddReservationWithNullHost.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotAddReservationWithNullStartDate.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotAddReservationWithStartDateAfterEndDate.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotAddReservationWithStartDateFromThePast.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotDeletePastReservation.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotFindNonExistingHostId.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotFindNonExistingSingleReservation.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotReservationWithAddNoGuest.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotUpdateNonExistingReservation.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldNotUpdateReservationInThePast.executor": "Run",
-    "JUnit.ReservationServiceTest.shouldUpdateReservation.executor": "Run",
-    "JUnit.java in Dontwreckmyhouse.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "assessment05-mastery-tony-karaj",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Tony/HTD/module05-mastery-project-dont-wreck-my-house-nocaptony/Dontwreckmyhouse"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GuestFileRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GuestFileRepositoryTest.shouldFindAllShouldReturnCorrectNumberOfGuests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GuestFileRepositoryTest.shouldFindByEmail.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GuestFileRepositoryTest.shouldFindById.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GuestFileRepositoryTest.shouldNotFindNonExistingEmail.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GuestFileRepositoryTest.shouldNotFindNonExistingId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GuestServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GuestServiceTest.shouldFindAllGuests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GuestServiceTest.shouldFindById.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GuestServiceTest.shouldNotFindNonExistentEmail.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GuestServiceTest.shouldNotFindNonExistingId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HostFileRepositoryTest.shouldFindAll.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HostFileRepositoryTest.shouldFindByEmail.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HostFileRepositoryTest.shouldNotFindNonExistingEmail.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HostServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HostServiceTest.shouldFindAllHosts.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HostServiceTest.shouldFindByEmail.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HostServiceTest.shouldFindById.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HostServiceTest.shouldNotFindNonExistingEmail.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HostServiceTest.shouldNotFindNonExistingId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationFileRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationFileRepositoryTest.findAllReservationPathsShouldReturnCorrectNumberOfFiles.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationFileRepositoryTest.findReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationFileRepositoryTest.findReservationsByHostId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationFileRepositoryTest.shouldAddReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationFileRepositoryTest.shouldDeleteReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationFileRepositoryTest.shouldNotDeleteNonExistingReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationFileRepositoryTest.shouldNotFindNonExistentHostIdReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationFileRepositoryTest.shouldNotFindNonExistentHostIdReservations.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationFileRepositoryTest.shouldNotFindNonExistentReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationFileRepositoryTest.shouldNotUpdateNonExistingReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationFileRepositoryTest.shouldUpdateReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldAddAReservationStartDateOnAnotherEndDate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldAddReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldCalculateTotalRateCorrectly.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldCalculateWeekDaysCorrectly.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldCalculateWeekendRateCorrectly.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldDeleteReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldFindByEmailReturnsCorrectNumberOfReservations.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldFindReservationByHostId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldFindReservationsByHostId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldFindSingleReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotAddNullGuest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotAddOverlappingReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotAddReservationWithNoHost.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotAddReservationWithNullEndDate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotAddReservationWithNullHost.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotAddReservationWithNullStartDate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotAddReservationWithStartDateAfterEndDate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotAddReservationWithStartDateFromThePast.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotDeletePastReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotFindNonExistingHostId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotFindNonExistingSingleReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotReservationWithAddNoGuest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotUpdateNonExistingReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldNotUpdateReservationInThePast.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationServiceTest.shouldUpdateReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in Dontwreckmyhouse.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;assessment05-mastery-tony-karaj&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tony/HTD/module05-mastery-project-dont-wreck-my-house-nocaptony/Dontwreckmyhouse&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Tony\HTD\module05-mastery-project-dont-wreck-my-house-nocaptony\Dontwreckmyhouse\data\test-data\test-reservations" />
@@ -121,19 +136,31 @@
       <recent name="learn.dontwreckmyhouse.data" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ReservationServiceTest.shouldCalculateWeekendRateCorrectly">
-    <configuration name="ReservationServiceTest.shouldCalculateTotalRateCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="learn.dontwreckmyhouse.App" />
       <module name="Dontwreckmyhouse" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="learn.dontwreckmyhouse.domain.*" />
+          <option name="PATTERN" value="learn.dontwreckmyhouse.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="learn.dontwreckmyhouse.domain" />
-      <option name="MAIN_CLASS_NAME" value="learn.dontwreckmyhouse.domain.ReservationServiceTest" />
-      <option name="METHOD_NAME" value="shouldCalculateTotalRateCorrectly" />
-      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservationFileRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dontwreckmyhouse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.dontwreckmyhouse.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="learn.dontwreckmyhouse.data" />
+      <option name="MAIN_CLASS_NAME" value="learn.dontwreckmyhouse.data.ReservationFileRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -154,7 +181,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservationServiceTest.shouldNotAddOverlappingReservation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReservationServiceTest.shouldNotFindNonExistingHostId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dontwreckmyhouse" />
       <extension name="coverage">
         <pattern>
@@ -164,51 +191,27 @@
       </extension>
       <option name="PACKAGE_NAME" value="learn.dontwreckmyhouse.domain" />
       <option name="MAIN_CLASS_NAME" value="learn.dontwreckmyhouse.domain.ReservationServiceTest" />
-      <option name="METHOD_NAME" value="shouldNotAddOverlappingReservation" />
+      <option name="METHOD_NAME" value="shouldNotFindNonExistingHostId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservationServiceTest.shouldNotAddReservationWithStartDateFromThePast" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="java in Dontwreckmyhouse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dontwreckmyhouse" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="learn.dontwreckmyhouse.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="learn.dontwreckmyhouse.domain" />
-      <option name="MAIN_CLASS_NAME" value="learn.dontwreckmyhouse.domain.ReservationServiceTest" />
-      <option name="METHOD_NAME" value="shouldNotAddReservationWithStartDateFromThePast" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReservationServiceTest.shouldNotDeletePastReservation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Dontwreckmyhouse" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="learn.dontwreckmyhouse.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="learn.dontwreckmyhouse.domain" />
-      <option name="MAIN_CLASS_NAME" value="learn.dontwreckmyhouse.domain.ReservationServiceTest" />
-      <option name="METHOD_NAME" value="shouldNotDeletePastReservation" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.java in Dontwreckmyhouse" />
+        <item itemvalue="JUnit.ReservationFileRepositoryTest" />
+        <item itemvalue="JUnit.ReservationServiceTest.shouldNotFindNonExistingHostId" />
         <item itemvalue="JUnit.ReservationServiceTest.shouldCalculateWeekendRateCorrectly" />
-        <item itemvalue="JUnit.ReservationServiceTest.shouldCalculateTotalRateCorrectly" />
-        <item itemvalue="JUnit.ReservationServiceTest.shouldNotAddOverlappingReservation" />
-        <item itemvalue="JUnit.ReservationServiceTest.shouldNotDeletePastReservation" />
-        <item itemvalue="JUnit.ReservationServiceTest.shouldNotAddReservationWithStartDateFromThePast" />
       </list>
     </recent_temporary>
   </component>

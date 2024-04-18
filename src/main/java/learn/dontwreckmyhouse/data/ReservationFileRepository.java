@@ -1,5 +1,6 @@
 package learn.dontwreckmyhouse.data;
 
+import learn.dontwreckmyhouse.models.Host;
 import learn.dontwreckmyhouse.models.Reservation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
@@ -28,15 +29,14 @@ public class ReservationFileRepository implements ReservationRepository {
     }
 
     @Override
-    public List<Reservation> findReservationsByHostId(String hostId) throws DataAccessException {
+    public List<Reservation> findReservationsByHost(Host host) throws DataAccessException {
         ArrayList<Reservation> result = new ArrayList<>();
-        String filePath = Paths.get(directory, hostId + ".csv").toString();
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(getFilePath(host)))) {
             reader.readLine();
             for (String line = reader.readLine(); line != null; line = reader.readLine()) {
                 String[] fields = line.split(",", -1);
                 if (fields.length == 5) {
-                    result.add(deserialize(fields, hostId));
+                    result.add(deserialize(fields, host.getHostId()));
                 }
             }
         } catch (IOException ex) {
@@ -46,8 +46,8 @@ public class ReservationFileRepository implements ReservationRepository {
     }
 
     @Override
-    public Reservation findReservation(String hostId, int reservationId) throws DataAccessException {
-        List<Reservation> all = findReservationsByHostId(hostId);
+    public Reservation findReservation(Host host, int reservationId) throws DataAccessException {
+        List<Reservation> all = findReservationsByHost(host);
         for (Reservation reservation : all) {
             if (reservation.getReservationId() == reservationId) {
                 return reservation;
@@ -58,22 +58,21 @@ public class ReservationFileRepository implements ReservationRepository {
 
     @Override
     public Reservation add(Reservation reservation) throws DataAccessException {
-        String hostId = reservation.getHost().getHostId();
-        List<Reservation> all = findReservationsByHostId(hostId);
+        List<Reservation> all = findReservationsByHost(reservation.getHost());
         int nextId = 1;
         for (Reservation existingReservation : all) {
             nextId = Math.max(nextId, existingReservation.getReservationId() + 1);
         }
         reservation.setReservationId(nextId);
         all.add(reservation);
-        writeToFile(all, hostId);
+        writeToFile(all, reservation.getHost().getHostId());
 
         return reservation;
     }
 
     @Override
     public boolean update(Reservation reservation) throws DataAccessException {
-        List<Reservation> all = findReservationsByHostId(reservation.getHost().getHostId());
+        List<Reservation> all = findReservationsByHost(reservation.getHost());
         for (int i = 0; i < all.size(); i++) {
             if (all.get(i).getReservationId() == reservation.getReservationId()) {
                 all.set(i, reservation);
@@ -86,7 +85,7 @@ public class ReservationFileRepository implements ReservationRepository {
 
     @Override
     public boolean delete(Reservation reservation) throws DataAccessException {
-        List<Reservation> all = findReservationsByHostId(reservation.getHost().getHostId());
+        List<Reservation> all = findReservationsByHost(reservation.getHost());
         for (int i = 0; i < all.size(); i++) {
             if (all.get(i).getReservationId() == (reservation.getReservationId())) {
                 all.remove(i);
@@ -115,6 +114,10 @@ public class ReservationFileRepository implements ReservationRepository {
         reservation.setHost(hostRepository.findById(hostId));
         reservation.setTotal(BigDecimal.valueOf(Double.parseDouble(fields[4])));
         return reservation;
+    }
+
+    private String getFilePath(Host host) {
+        return Paths.get(directory, host.getHostId() + ".csv").toString();
     }
 
     private void writeToFile(List<Reservation> reservations, String hostId) {

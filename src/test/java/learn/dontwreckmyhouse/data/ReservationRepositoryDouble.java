@@ -19,10 +19,10 @@ public class ReservationRepositoryDouble implements ReservationRepository {
         reservations.add(RESERVATION);
     }
     @Override
-    public List<Reservation> findReservationsByHostId(String hostId) throws DataAccessException {
+    public List<Reservation> findReservationsByHost(Host host) throws DataAccessException {
         List<Reservation> all = new ArrayList<>();
         for (Reservation reservation : reservations) {
-            if (reservation.getHost().getHostId().equals(hostId)) {
+            if (reservation.getHost().getHostId().equals(host.getHostId())) {
                 all.add(reservation);
             }
         }
@@ -30,8 +30,8 @@ public class ReservationRepositoryDouble implements ReservationRepository {
     }
 
     @Override
-    public Reservation findReservation(String hostId, int reservationId) throws DataAccessException {
-        List<Reservation> reservationsByHostId = findReservationsByHostId(hostId);
+    public Reservation findReservation(Host host, int reservationId) throws DataAccessException {
+        List<Reservation> reservationsByHostId = findReservationsByHost(host);
         for (Reservation reservation : reservationsByHostId) {
             if (reservation.getReservationId() == reservationId) {
                 return reservation;
@@ -42,7 +42,7 @@ public class ReservationRepositoryDouble implements ReservationRepository {
 
     @Override
     public Reservation add(Reservation reservation) throws DataAccessException {
-        List<Reservation> all = findReservationsByHostId(reservation.getHost().getHostId());
+        List<Reservation> all = findReservationsByHost(reservation.getHost());
 
         int maxReservationId = 0;
         for (Reservation r : all) {
@@ -62,7 +62,7 @@ public class ReservationRepositoryDouble implements ReservationRepository {
 
     @Override
     public boolean update(Reservation reservation) throws DataAccessException {
-        return findReservation(reservation.getHost().getHostId(), reservation.getReservationId()) != null;
+        return findReservation(reservation.getHost(), reservation.getReservationId()) != null;
     }
 
     @Override

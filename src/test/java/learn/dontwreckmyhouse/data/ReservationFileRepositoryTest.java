@@ -38,27 +38,33 @@ class ReservationFileRepositoryTest {
 
     @Test
     void findReservationsByHostId() throws DataAccessException {
-        List<Reservation> actual = repository.findReservationsByHostId("cc136272-2816-416f-95b8-7122c4856b12");
+        List<Reservation> actual =
+                repository.findReservationsByHost(hostRepository.findById("cc136272-2816-416f-95b8-7122c4856b12"));
         assertNotNull(actual);
         assertEquals(11, actual.size());
     }
 
     @Test
     void shouldNotFindNonExistentHostIdReservations() throws DataAccessException {
-        List<Reservation> actual = repository.findReservationsByHostId("thisisatestid");
+        Host host = new Host();
+        host.setHostId("thisisatestid");
+        List<Reservation> actual = repository.findReservationsByHost(host);
         assertEquals(0, actual.size());
     }
 
     @Test
     void findReservation() throws DataAccessException {
-        Reservation actual = repository.findReservation("cc136272-2816-416f-95b8-7122c4856b12", 1);
+        Reservation actual =
+                repository.findReservation(hostRepository.findById("cc136272-2816-416f-95b8-7122c4856b12"),
+                        1);
         assertNotNull(actual);
         assertEquals(LocalDate.of(2021, 5,23), actual.getEndDate());
     }
 
     @Test
     void shouldNotFindNonExistentReservation() throws DataAccessException {
-        Reservation actual = repository.findReservation("cc136272-2816-416f-95b8-7122c4856b12", 999);
+        Reservation actual = repository.findReservation(hostRepository.findById("cc136272-2816-416f-95b8-7122c4856b12"),
+                999);
         assertNull(actual);
     }
 
@@ -71,12 +77,14 @@ class ReservationFileRepositoryTest {
         reservation.setEndDate(LocalDate.of(2024, 4, 18));
         reservation.setTotal(BigDecimal.valueOf(1000));
         assertNotNull(repository.add(reservation));
-        assertEquals(12, repository.findReservationsByHostId("cc136272-2816-416f-95b8-7122c4856b12").size());
+        assertEquals(12, repository.findReservationsByHost(host).size());
     }
 
     @Test
     void shouldUpdateReservation() throws DataAccessException {
-        Reservation reservation = repository.findReservation("cc136272-2816-416f-95b8-7122c4856b12", 1);
+        Reservation reservation =
+                repository.findReservation(hostRepository.findById("cc136272-2816-416f-95b8-7122c4856b12"),
+                        1);
         reservation.setEndDate(LocalDate.of(2021,5,30));
         assertTrue(repository.update(reservation));
     }
@@ -98,9 +106,13 @@ class ReservationFileRepositoryTest {
 
     @Test
     void shouldDeleteReservation() throws DataAccessException {
-        Reservation reservation = repository.findReservation("cc136272-2816-416f-95b8-7122c4856b12", 1);
+        Reservation reservation =
+                repository.findReservation(hostRepository.findById("cc136272-2816-416f-95b8-7122c4856b12"),
+                        1);
         assertTrue(repository.delete(reservation));
-        assertEquals(10, repository.findReservationsByHostId("cc136272-2816-416f-95b8-7122c4856b12").size());
+        assertEquals(10,
+                repository.findReservationsByHost(
+                        hostRepository.findById("cc136272-2816-416f-95b8-7122c4856b12")).size());
     }
 
     @Test

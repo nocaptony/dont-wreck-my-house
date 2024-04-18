@@ -18,12 +18,12 @@ public class ReservationService {
         this.reservationRepository = reservationRepository;
     }
 
-    public List<Reservation> findReservationByHostId(String hostId) throws DataAccessException {
-        return reservationRepository.findReservationsByHostId(hostId);
+    public List<Reservation> findReservationByHost(Host host) throws DataAccessException {
+        return reservationRepository.findReservationsByHost(host);
     }
 
-    public Reservation findReservation(String hostId, int reservationId) throws DataAccessException {
-        return reservationRepository.findReservation(hostId, reservationId);
+    public Reservation findReservationById(Host host, int reservationId) throws DataAccessException {
+        return reservationRepository.findReservation(host, reservationId);
     }
 
     public Result<Reservation> add(Reservation reservation) throws DataAccessException {
@@ -128,7 +128,7 @@ public class ReservationService {
         }
 
         if (reservation.getReservationId() > 0) {
-            Reservation existingReservation = reservationRepository.findReservation(reservation.getHost().getHostId(), reservation.getReservationId());
+            Reservation existingReservation = reservationRepository.findReservation(reservation.getHost(), reservation.getReservationId());
             if (existingReservation != null && existingReservation.getStartDate().isBefore(now)) {
                 result.addErrorMessage("Cannot delete past reservations.");
             }
@@ -160,7 +160,7 @@ public class ReservationService {
 
     private void validateDoesNotOverlap(Reservation reservation, Result<Reservation> result) throws DataAccessException {
         if (reservation.getHost() != null) {
-            List<Reservation> reservations = findReservationByHostId(reservation.getHost().getHostId());
+            List<Reservation> reservations = findReservationByHost(reservation.getHost());
             LocalDate startDate = reservation.getStartDate();
             LocalDate endDate = reservation.getEndDate();
             if (startDate != null && endDate != null) {

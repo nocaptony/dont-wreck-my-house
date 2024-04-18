@@ -2,6 +2,7 @@ package learn.dontwreckmyhouse.domain;
 
 import learn.dontwreckmyhouse.data.DataAccessException;
 import learn.dontwreckmyhouse.data.ReservationRepositoryDouble;
+import learn.dontwreckmyhouse.models.Host;
 import learn.dontwreckmyhouse.models.Reservation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,26 +23,30 @@ class ReservationServiceTest {
 
     @Test
     void shouldFindReservationsByHostId() throws DataAccessException {
-        assertNotNull(service.findReservationByHostId(ReservationRepositoryDouble.HOST.getHostId()));
-        assertEquals(1, service.findReservationByHostId(ReservationRepositoryDouble.HOST.getHostId()).size());
+        assertNotNull(service.findReservationByHost(ReservationRepositoryDouble.HOST));
+        assertEquals(1, service.findReservationByHost(ReservationRepositoryDouble.HOST).size());
     }
 
     @Test
     void shouldNotFindNonExistingHostId() throws DataAccessException {
-        assertEquals(0, service.findReservationByHostId("thisisatest").size());
+        Host host = new Host();
+        host.setHostId("thisiddoesnotexist");
+        assertEquals(0, service.findReservationByHost(host).size());
     }
 
     @Test
     void shouldFindSingleReservation() throws DataAccessException {
-        assertNotNull(service.findReservation(ReservationRepositoryDouble.HOST.getHostId(), 1));
+        assertNotNull(service.findReservationById(ReservationRepositoryDouble.HOST, 1));
         assertEquals("mctesttest2@gmail.com",
-                service.findReservation(ReservationRepositoryDouble.HOST.getHostId(),
+                service.findReservationById(ReservationRepositoryDouble.HOST,
                         1).getGuest().getGuestEmail());
     }
 
     @Test
     void shouldNotFindNonExistingSingleReservation() throws DataAccessException {
-        assertNull(service.findReservation("thisdoesnotexist", 5));
+        Host host = new Host();
+        host.setHostId("thisdoesnotexist");
+        assertNull(service.findReservationById(host, 5));
     }
 
     @Test
@@ -159,7 +164,7 @@ class ReservationServiceTest {
     void shouldUpdateReservation() throws DataAccessException {
         LocalDate start = LocalDate.of(2024, 5, 1);
         LocalDate end = LocalDate.of(2024, 5, 8);
-        Reservation reservation = service.findReservation(ReservationRepositoryDouble.HOST.getHostId(), 1);
+        Reservation reservation = service.findReservationById(ReservationRepositoryDouble.HOST, 1);
         reservation.setStartDate(start);
         reservation.setEndDate(end);
         reservation.setTotal(service.calculateTotal(start, end, ReservationRepositoryDouble.HOST));
@@ -169,21 +174,21 @@ class ReservationServiceTest {
 
     @Test
     void shouldNotUpdateNonExistingReservation() throws DataAccessException {
-        Reservation reservation = service.findReservation(ReservationRepositoryDouble.HOST.getHostId(), 999);
+        Reservation reservation = service.findReservationById(ReservationRepositoryDouble.HOST, 999);
         Result<Reservation> result = service.update(reservation);
         assertFalse(result.isSuccess());
     }
 
     @Test
     void shouldDeleteReservation() throws DataAccessException {
-        Reservation reservation = service.findReservation(ReservationRepositoryDouble.HOST.getHostId(), 1);
+        Reservation reservation = service.findReservationById(ReservationRepositoryDouble.HOST, 1);
         Result<Reservation> result = service.delete(reservation);
         assertTrue(result.isSuccess());
     }
 
     @Test
     void shouldNotDeleteNonExistingReservation() throws DataAccessException {
-        Reservation reservation = service.findReservation(ReservationRepositoryDouble.HOST.getHostId(), 999);
+        Reservation reservation = service.findReservationById(ReservationRepositoryDouble.HOST, 999);
         Result<Reservation> result = service.delete(reservation);
         assertFalse(result.isSuccess());
     }

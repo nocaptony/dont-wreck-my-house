@@ -65,7 +65,7 @@ public class Controller {
         if (host == null) {
             return;
         }
-        List<Reservation> reservations = reservationService.findReservationByHostId(host.getHostId());
+        List<Reservation> reservations = reservationService.findReservationByHost(host);
         if (reservations == null || reservations.isEmpty()) {
             view.displayStatus(false, String.format("No reservations found for host with email %s.", host.getHostEmail()));
         } else {
@@ -83,7 +83,7 @@ public class Controller {
         if (guest == null) {
             return;
         }
-        List<Reservation> reservations = reservationService.findReservationByHostId(host.getHostId());
+        List<Reservation> reservations = reservationService.findReservationByHost(host);
 
         view.displayAllReservations(reservations, host);
         Reservation reservation = view.makeReservation(host, guest, reservationService);
@@ -103,7 +103,7 @@ public class Controller {
         Host host = getHost();
         List<Reservation> reservations = null;
         if (host != null) {
-            reservations = reservationService.findReservationByHostId(host.getHostId());
+            reservations = reservationService.findReservationByHost(host);
         }
 
         if (host == null || reservations == null || reservations.isEmpty()) {
@@ -124,13 +124,13 @@ public class Controller {
         }
 
         view.displayReservationSummary(reservationToUpdate);
-        boolean update = view.confirmReservationUpdate();
-        if (update) {
-            view.editReservation(reservationToUpdate);
-            BigDecimal updatedTotal = reservationService.calculateTotal(reservationToUpdate.getStartDate(),
-                    reservationToUpdate.getEndDate(), host);
-            reservationToUpdate.setTotal(updatedTotal);
-            Result<Reservation> result = reservationService.update(reservationToUpdate);
+        view.editReservation(reservationToUpdate);
+        BigDecimal updatedTotal = reservationService.calculateTotal(reservationToUpdate.getStartDate(),
+                reservationToUpdate.getEndDate(), host);
+        reservationToUpdate.setTotal(updatedTotal);
+        Result<Reservation> result = reservationService.update(reservationToUpdate);
+        boolean confirmUpdate = view.confirmReservationUpdate();
+        if (confirmUpdate) {
             if (result.isSuccess()) {
                 view.displayStatus(true, String.format("Reservation ID: %s has been updated. New total: $%.2f.",
                         reservationToUpdate.getReservationId(), updatedTotal));
@@ -148,7 +148,7 @@ public class Controller {
         Host host = getHost();
         List<Reservation> reservations = null;
         if (host != null) {
-            reservations = reservationService.findReservationByHostId(host.getHostId());
+            reservations = reservationService.findReservationByHost(host);
         }
 
         if (host == null || reservations == null || reservations.isEmpty()) {
